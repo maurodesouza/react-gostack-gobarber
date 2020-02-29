@@ -43,6 +43,12 @@ export const Content = styled.div`
       }
     }
 
+    span {
+      color: #fff;
+      margin-bottom: 20px;
+      align-self: flex-start;
+    }
+
     button {
       border: 0;
       border-radius: 5px;
