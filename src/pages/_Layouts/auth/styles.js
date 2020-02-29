@@ -32,6 +32,15 @@ export const Content = styled.div`
       &::placeholder {
         color: #fff;
       }
+
+      &:-webkit-autofill,
+      &:-webkit-autofill:hover,
+      &:-webkit-autofill:focus,
+      &:-webkit-autofill:active {
+        box-shadow: 0 0 0 30px rgba(0, 0, 0, 0.01) inset !important;
+        transition: background-color 5000s ease-in-out 0s;
+        -webkit-text-fill-color: #fff !important;
+      }
     }
 
     button {
