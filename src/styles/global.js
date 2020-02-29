@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default createGlobalStyle`
   * {
@@ -36,5 +37,11 @@ export default createGlobalStyle`
     cursor: pointer;
   }
 
+  .toast {
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 20px 30px;
+    background: #3b9eff;
+  }
 
 `;

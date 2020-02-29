@@ -1,4 +1,5 @@
 import { all, call, put, takeLatest } from 'redux-saga/effects';
+import { toast } from 'react-toastify';
 
 import { signInSuccess, signFailure } from './actions';
 import api from '~/services/api';
@@ -12,12 +13,16 @@ export function* signIn({ payload }) {
       data: { user, token },
     } = yield call(api.post, '/session', { email, password });
 
-    if (!user.provider) return console.tron.error('Hmm ... Hellow ?');
+    if (!user.provider) {
+      toast.warn('GoBarber web é só para prestadores de serviços !');
+      return yield put(signFailure());
+    }
 
     yield put(signInSuccess(token, user));
 
     return history.push('/dashboard');
   } catch (err) {
+    toast.warn('Algo deu errado - Verifique seus dados !');
     return yield put(signFailure());
   }
 }
