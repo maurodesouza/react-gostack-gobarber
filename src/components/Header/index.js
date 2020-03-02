@@ -23,7 +23,7 @@ export default function Header() {
               <Link to="/profile"> Meu perfil </Link>
             </div>
             <img
-              src="https://randomuser.me/api/portraits/thumb/men/75.jpg"
+              src="https://api.adorable.io/avatars/60/abott@adorable.png"
               alt="Mauro de Souza"
             />
           </Profile>
