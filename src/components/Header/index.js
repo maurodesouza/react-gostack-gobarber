@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import Notifications from '~/components/Notifications';
@@ -7,6 +8,8 @@ import logo from '~/assets/svgs/logo-purple.svg';
 import { Container, Content, Profile } from './styles';
 
 export default function Header() {
+  const { name, avatar } = useSelector(({ user }) => user.profile);
+
   return (
     <Container>
       <Content>
@@ -19,12 +22,15 @@ export default function Header() {
           <Notifications />
           <Profile>
             <div>
-              <strong> Mauro de Souza </strong>
+              <strong> {name} </strong>
               <Link to="/profile"> Meu perfil </Link>
             </div>
             <img
-              src="https://api.adorable.io/avatars/60/abott@adorable.png"
-              alt="Mauro de Souza"
+              src={
+                avatar.url ||
+                'https://api.adorable.io/avatars/60/abott@adorable.png'
+              }
+              alt={name}
             />
           </Profile>
         </aside>
