@@ -4,6 +4,7 @@ import { Form, Input } from '@rocketseat/unform';
 
 import AvataInput from './AvatarInput';
 import { updateProfileRequest } from '~/store/modules/user/actions';
+import { signOut } from '~/store/modules/auth/actions';
 import { Container } from './styles';
 
 export default function Profile() {
@@ -37,7 +38,9 @@ export default function Profile() {
         <button type="submit">Atualizar perfil</button>
       </Form>
 
-      <button type="submit">Sair do GoBarber</button>
+      <button type="submit" onClick={() => dispatch(signOut())}>
+        Sair do GoBarber
+      </button>
     </Container>
   );
 }
